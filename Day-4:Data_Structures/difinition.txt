@@ -1,0 +1,11 @@
+✅ Dictionary
+A dictionary is a collection of key-value pairs, where each key is unique and maps to a specific value.
+➡️ Syntax: {"key": "value"}
+
+✅ Tuple
+A tuple is an ordered and immutable collection of items, used to group related values.
+➡️ Syntax: ("item1", "item2")
+
+✅ Set
+A set is an unordered collection of unique items, used to store distinct elements and perform set operations.
+➡️ Syntax: {item1, item2}
