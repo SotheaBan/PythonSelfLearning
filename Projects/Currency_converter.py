@@ -61,7 +61,15 @@ def saveIntoCSV(filename, headers, data):
             writer = csv.writer(file)
             writer.writerow(headers)
             writer.writerows(data)
+
+        print("")
         print(f"File saved as '{filename}'")
+        print("Download exchange rate from the website...")
+        print("Process save csv file…")
+        print("Exchange rate save successfully...")
+        print("")
+
+        
     except Exception as e:
         print(f" Failed to write file: {e}")
 
@@ -87,6 +95,7 @@ while True :
             if choice == 'y': 
                 break
             elif choice == 'n': 
+                print('See you later!')
                 exit()
             else: 
                 print("Invalid input")
@@ -99,22 +108,25 @@ while True :
             print(f"{semi}Welcome To  Currency Converter{semi}")
             amount= int(input("Please Type amount in khmer Reil: "))
             currency = input("currency you want to exchange : ").upper()    
-            exchange = currency+"/"+"KHR"
-            for i in range(len(data)):
-                if exchange == data[i][1]:   
-                    print("Currency do not have enough data!")
-                    print(f"{semi}SUMMARY CURRENCY EXCHANGE{semi}")     
-                    print(f"{amount} Cambodian Riels ={currencyConverter(amount,exchange)} ")
-                    choice = input("Do you want to continue? (y/n): ")
-                    if choice == 'y': 
-                        break
-                    elif choice == 'n': 
-                        exit()
-                    else: 
-                        print("Invalid input")
-                   
+
+            if currency !="":
+                exchange = currency+"/"+"KHR"
+                for i in range(len(data)):
+                    if exchange == data[i][1]:   
+                        print("Currency do not have enough data!")
+                        print(f"{semi}SUMMARY CURRENCY EXCHANGE{semi}")     
+                        print(f"{amount} Cambodian Riels ={currencyConverter(amount,exchange)} ")
             else: 
                 print("Invalid exchange !")
+
+            choice = input("Do you want to continue? (y/n): ")
+            if choice == 'y': 
+                break
+            elif choice == 'n': 
+                print('See you later!')
+                exit()
+            else: 
+                print("Invalid input")
 
 
     elif choice =='3': 
